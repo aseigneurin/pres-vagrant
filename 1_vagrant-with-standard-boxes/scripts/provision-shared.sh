@@ -2,4 +2,4 @@
 set -e
 set -x
 
-apt-get -y update
+#apt-get -y update
