@@ -10,12 +10,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "shell", path: "scripts/provision-shared.sh"
 
-  config.vm.define "front-end" do |frontend|
-    frontend.vm.provision "shell", path: "scripts/provision-frontend.sh"
-    frontend.vm.network "private_network", ip: "192.168.1.10", virtualbox__intnet: "vagrantnetwork"
-    frontend.vm.network "forwarded_port", guest: 80, host: 8010
-  end
-
   config.vm.define "back-end-1" do |backend1|
     backend1.vm.provision "shell", path: "scripts/provision-backend-1.sh"
     backend1.vm.network "private_network", ip: "192.168.1.11", virtualbox__intnet: "vagrantnetwork"
@@ -26,6 +20,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     backend2.vm.provision "shell", path: "scripts/provision-backend-2.sh"
     backend2.vm.network "private_network", ip: "192.168.1.12", virtualbox__intnet: "vagrantnetwork"
     backend2.vm.network "forwarded_port", guest: 80, host: 8012
+  end
+
+  config.vm.define "front-end" do |frontend|
+    frontend.vm.provision "shell", path: "scripts/provision-frontend.sh"
+    frontend.vm.network "private_network", ip: "192.168.1.10", virtualbox__intnet: "vagrantnetwork"
+    frontend.vm.network "forwarded_port", guest: 80, host: 8010
   end
 
 end
