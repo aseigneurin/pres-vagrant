@@ -13,7 +13,7 @@ Etape 1 : VM simple
 
 ### Démarrer la VM
 
-    $ cd 0_simple_vagrant_vm
+    $ cd 1_simple_vagrant_vm
     $ vagrant up
     Bringing machine 'default' up with 'virtualbox' provider...
     ...
@@ -43,7 +43,7 @@ Etape 2 : Multi-VM
 
 ### Démarrer une VM
 
-    $ cd 1_vagrant-with-standard-boxes
+    $ cd 2_vagrant-with-standard-boxes
     $ vagrant up back-end-1
     Bringing machine 'back-end-1' up with 'virtualbox' provider...
     ...
@@ -53,7 +53,7 @@ Etape 2 : Multi-VM
 
 ### Démarrer toutes les VMs
 
-    $ cd 1_vagrant-with-standard-boxes
+    $ cd 2_vagrant-with-standard-boxes
     $ vagrant up
     Bringing machine 'back-end-1' up with 'virtualbox' provider...
     ...
@@ -94,28 +94,28 @@ Etape 3 : Boxes repackagées
 
 ### Repackager les boxes de l'étape 2
 
-    $ cd 1_vagrant-with-standard-boxes
+    $ cd 2_vagrant-with-standard-boxes
     
     $ VBoxManage list vms
-    "1_vagrant-with-standard-boxes_front-end_1395157474108_74569" {1e1cbc10-884b-49b0-b102-d5ab721e901b}
+    "2_vagrant-with-standard-boxes_front-end_1395157474108_74569" {1e1cbc10-884b-49b0-b102-d5ab721e901b}
     ...
     
-    $ vagrant package --base 1_vagrant-with-standard-boxes_front-end_1395157474108_74569 --output front-end.box
-    [1_vagrant-with-standard-boxes_front-end_1395157474108_74569] Attempting graceful shutdown of VM...
-    [1_vagrant-with-standard-boxes_front-end_1395157474108_74569] Clearing any previously set forwarded ports...
-    [1_vagrant-with-standard-boxes_front-end_1395157474108_74569] Exporting VM...
-    [1_vagrant-with-standard-boxes_front-end_1395157474108_74569] Compressing package to: /Users/aseigneurin/dev/pres-vagrant/1_vagrant-with-standard-boxes/front-end.box
+    $ vagrant package --base 2_vagrant-with-standard-boxes_front-end_1395157474108_74569 --output front-end.box
+    [2_vagrant-with-standard-boxes_front-end_1395157474108_74569] Attempting graceful shutdown of VM...
+    [2_vagrant-with-standard-boxes_front-end_1395157474108_74569] Clearing any previously set forwarded ports...
+    [2_vagrant-with-standard-boxes_front-end_1395157474108_74569] Exporting VM...
+    [2_vagrant-with-standard-boxes_front-end_1395157474108_74569] Compressing package to: /Users/aseigneurin/dev/pres-vagrant/2_vagrant-with-standard-boxes/front-end.box
     
     $ vagrant box add front-end front-end.box
-    Downloading box from URL: file:/Users/aseigneurin/dev/pres-vagrant/1_vagrant-with-standard-boxes/front-end.box
+    Downloading box from URL: file:/Users/aseigneurin/dev/pres-vagrant/2_vagrant-with-standard-boxes/front-end.box
     Extracting box...te: 274M/s, Estimated time remaining: 0:00:01)
     Successfully added box 'front-end' with provider 'virtualbox'!
     
-    $ vagrant package --base 1_vagrant-with-standard-boxes_back-end-1_1395157553886_83971 --output back-end-1.box
+    $ vagrant package --base 2_vagrant-with-standard-boxes_back-end-1_1395157553886_83971 --output back-end-1.box
     ...
     $ vagrant box add back-end-1 back-end-1.box
     ...
-    $ vagrant package --base 1_vagrant-with-standard-boxes_back-end-2_1395157623376_40688 --output back-end-2.box
+    $ vagrant package --base 2_vagrant-with-standard-boxes_back-end-2_1395157623376_40688 --output back-end-2.box
     ...
     $ vagrant box add back-end-2 back-end-2.box
     ...
@@ -130,7 +130,7 @@ Etape 3 : Boxes repackagées
 
 ### Démarrer les VMs
 
-    $ cd 2_vagrant-with-repackaged-boxes
+    $ cd 3_vagrant-with-repackaged-boxes
     $ vagrant up
     ...
     
