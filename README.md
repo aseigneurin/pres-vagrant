@@ -149,3 +149,49 @@ Etape 3 : Boxes repackagées
     $ curl localhost:9010
     <html><body><h1>Je suis le back-end #1</h1></body></html>
 
+Etape 4 : Création d'une VM from scratch avec Veewee
+----------------------------------------------------
+
+### Features
+
+- Création d'une VM à partir d'une ISO Ubuntu
+- Source du template : https://github.com/jedi4ever/veewee/tree/master/templates/ubuntu-13.10-server-amd64
+
+### Préparation de la box
+
+    $ cd 4_veewee
+    $ bundle exec veewee vbox build ...
+    ...
+    
+    $ vagrant box add ubuntu-13.10-server-amd64 ubuntu-13.10-server-amd64.box
+    ...
+
+Etape 5 : Création d'une VM from scratch avec Packer
+----------------------------------------------------
+
+### Features
+
+- Création d'une VM à partir d'une ISO Ubuntu
+
+### Conversion du template Veewee en template Packer
+
+    $ cd 5_packer
+    $ veewee-to-packer ../4_veewee/definition.rb --output .
+    Success! Your Veewee definition was converted to a Packer template!
+    The template can be found in the `template.json` file in the output
+    directory: output
+
+Puis, éditer le fichier "template.json" :
+
+- Supprimer les blocs "vmware" dans les blocs "provisioners" et "builders".
+- Renommer les blocs "virtualbox" en "virtualbox-iso".
+
+### Préparation de la box
+
+    $ packer build template.json
+    ...
+    ==> Builds finished. The artifacts of successful builds are:
+    --> virtualbox-iso: 'virtualbox' provider box: packer_virtualbox-iso_virtualbox.box
+    
+    $ vagrant box add ubuntu-13.10-server-amd64 packer_virtualbox-iso_virtualbox.box
+    ...

@@ -1,13 +1,13 @@
 Veewee::Session.declare({
   :cpu_count => '1',
-  :memory_size => '2048',
+  :memory_size => '512',
   :disk_size => '65536',
   :disk_format => 'VDI',
   :hostiocache => 'off',
   :os_type_id => 'Ubuntu_64',
-  :iso_file => "ubuntu-13.04-server-amd64.iso",
-  :iso_src => "http://releases.ubuntu.com/13.04/ubuntu-13.04-server-amd64.iso",
-  :iso_md5 => "7d335ca541fc4945b674459cde7bffb9",
+  :iso_file => "ubuntu-13.10-server-amd64.iso",
+  :iso_src => "http://releases.ubuntu.com/13.10/ubuntu-13.10-server-amd64.iso",
+  :iso_md5 => "4d1a8b720cdd14b76ed9410c63a00d0e",
   :iso_download_timeout => "1000",
   :boot_wait => "4",
   :boot_cmd_sequence => [
@@ -33,12 +33,13 @@ Veewee::Session.declare({
   :postinstall_files => [
    "build_time.sh",
    "apt.sh",
-   "vbox.sh",
    "sudo.sh",
+   "vagrant.sh",
    "ruby.sh",
    "chef.sh",
    "puppet.sh",
-   "vagrant.sh",
+   "vbox.sh",
+   # "parallels.sh",
    "cleanup.sh"
   ],
   :postinstall_timeout => "10000"
