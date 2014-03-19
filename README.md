@@ -156,6 +156,7 @@ Etape 4 : Création d'une VM from scratch avec Veewee
 
 - Création d'une VM à partir d'une ISO Ubuntu
 - Source du template : https://github.com/jedi4ever/veewee/tree/master/templates/ubuntu-13.10-server-amd64
+- **Création de la box en ~30 minutes**
 
 ### Préparation de la box
 
@@ -172,6 +173,7 @@ Etape 5 : Création d'une VM from scratch avec Packer
 ### Features
 
 - Création d'une VM à partir d'une ISO Ubuntu
+- **Création de la box en ~30 minutes**
 
 ### Conversion du template Veewee en template Packer
 
