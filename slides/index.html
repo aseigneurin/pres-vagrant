@@ -217,7 +217,7 @@ end
 					<section>
 						<h2>Bilan</h2>
 						<p>3 VMs "isolées ensemble"</p>
-						<p>Up &amp; running en 2 minutes 30</p>
+						<p class="fragment">Up &amp; running en 2 minutes 30</p>
 					</section>
 					<section>
 						<h2>Limites</h2>
@@ -284,6 +284,77 @@ end
 						<h2>Limites</h2>
 						<p>Pas automatisé</p>
 						<p class="fragment">Pas de contrôle sur la box d'origine</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Base boxes from scratch</h1>
+					</section>
+					<section>
+						<h2>Principe</h2>
+						<p>Création d'une VM depuis une ISO</p>
+						<p class="fragment">Fichier de preseed</p>
+						<p class="fragment">Adaptation : user vagrant...</p>
+						<p class="fragment">Packaging</p>
+					</section>
+					<section>
+						<h2>Veewee</h2>
+						<ul>
+							<li>VirtualBox (OVF)</li>
+							<li>VMware (OVA)</li>
+							<li>KVM (IMG)</li>
+							<li>Parallels</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Packer</h2>
+						<ul>
+							<li>Amazon EC2 (AMI)</li>
+							<li>Google Compute Engine</li>
+							<li>OpenStack</li>
+							<li>...</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Exemple</h2>
+						<p>$ packer build template.json</p>
+					</section>
+					<section>
+						<h2>Bilan</h2>
+						<p>Configuration sur mesure</p>
+						<p class="fragment">Pas que Vagrant / VirtualBox</p>
+					</section>
+					<section>
+						<h2>Limites</h2>
+						<p>Complexe (preseeding)</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Recommendations</h1>
+					</section>
+					<section>
+						<h2>Utiliser des base boxes de base</h2>
+						<ul>
+							<li>Si une base box standard convient</li>
+							<li>Si le provisioning est simple</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Utiliser des base boxes repackagées</h2>
+						<ul>
+							<li>Si une base box standard convient</li>
+							<li>Si le provisioning est long</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Utiliser des base boxes Packer</h2>
+						<ul>
+							<li>Si une base box standard ne convient pas</li>
+							<li>Si la target n'est pas (que) Vagrant</li>
+						</ul>
 					</section>
 				</section>
 
