@@ -17,6 +17,7 @@ then
     server_name localhost;
     location / {
       proxy_pass http://backend/;
+      proxy_connect_timeout 10;
     }
   }" > /etc/nginx/sites-available/ippon
 
