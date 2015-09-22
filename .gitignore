@@ -1,5 +1,1 @@
 .vagrant/
-packer_cache/
-output-virtualbox-iso/
-node_modules/
-iso/

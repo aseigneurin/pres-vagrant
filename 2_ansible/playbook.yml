@@ -1,0 +1,9 @@
+---
+- hosts: all
+
+  vars:
+    java_packages:
+      - oracle-java7-installer
+
+  roles:
+    - { role: jgoodall.maven3, maven_version: 3.3.3, sudo: true }
