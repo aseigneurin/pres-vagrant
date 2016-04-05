@@ -4,4 +4,4 @@ set -x
 
 apt-get -y install apache2
 
-echo "Je suis le back-end #2" > /var/www/index.html
+echo "Je suis le back-end #2" > /var/www/html/index.html
