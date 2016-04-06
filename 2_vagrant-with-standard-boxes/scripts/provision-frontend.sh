@@ -23,5 +23,5 @@ then
 
   ln -s /etc/nginx/sites-available/ippon /etc/nginx/sites-enabled/ippon
 
-  nginx
+  /etc/init.d/nginx restart
 fi
