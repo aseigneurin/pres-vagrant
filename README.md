@@ -1,6 +1,11 @@
 Présentation Vagrant et Packer
 ==============================
 
+Slides
+------
+
+Pour voir les slides, ouvrir slides/index.html dans un navigateur.
+
 Etape 1 : VM simple
 -------------------
 
@@ -161,8 +166,9 @@ Etape 4 : Création d'une VM from scratch avec Veewee
 ### Préparation de la box
 
     $ cd 4_veewee
-    $ bundle exec veewee vbox build ...
+    $ veewee vbox build ubuntu-13.10-server-amd64
     ...
+    The box ubuntu-13.10-server-amd64 was built successfully!
     
     $ vagrant box add ubuntu-13.10-server-amd64 ubuntu-13.10-server-amd64.box
     ...
